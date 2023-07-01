@@ -1,0 +1,16 @@
+https://practice.geeksforgeeks.org/problems/-matchsticks-game4906/1
+
+
+//User function Template for Java
+
+class Solution {
+    static int matchGame(Long N) {
+        // code here
+        if(N%5==0)
+        return -1;
+        
+        int a=(int)(N%5);
+        
+        return a;
+    }
+};
