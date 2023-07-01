@@ -1,0 +1,31 @@
+https://practice.geeksforgeeks.org/problems/ticket-counter-2731/1
+
+
+//User function Template for Java
+class Solution {
+    public static int distributeTicket(int N,int K)
+    {
+        int i=0;
+        int j=N-1;
+        boolean turn=false;
+        while(i<=j)
+        {
+            if(!turn)
+            {
+                i+=K;
+                turn=true;
+            }
+            
+            else
+            {
+                turn=false;
+                j-=K;
+            }
+        }
+        if(i==j) return i+1;
+        if(turn)
+        return j+1;
+        else
+        return i+1;
+    }
+}
