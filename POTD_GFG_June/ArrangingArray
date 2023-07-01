@@ -1,0 +1,46 @@
+https://practice.geeksforgeeks.org/problems/arranging-the-array1131/1
+
+
+
+//User function Template for Java
+
+class Solution {
+    
+    public void Rearrange(int a[], int n)
+    {
+        // S(n) ,T(n)
+        // int[] arr=new int[n];
+        // int k=0;
+        
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(a[i]<0)
+        //     arr[k++]=a[i];
+        // }
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(a[i]>=0)
+        //     arr[k++]=a[i];
+        // }
+        // for(int i=0;i<n;i++)
+        // a[i]=arr[i];
+
+//S(1) T(N^2)
+        int key,j;
+        for(int i=1;i<n;i++)
+        {
+            key=a[i];
+            
+            if(key>=0)
+            continue;
+            j=i-1;
+            while(j>=0 && a[j]>=0)
+            {
+                a[j+1]=a[j];
+                j--;
+            }
+            a[j+1]=key;
+        }
+        
+    }
+}
