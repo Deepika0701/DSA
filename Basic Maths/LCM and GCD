@@ -1,0 +1,25 @@
+https://practice.geeksforgeeks.org/problems/lcm-and-gcd4516/1
+class Solution {
+    static Long[] lcmAndGcd(Long A , Long B) {
+        // code here
+        long gcd=1;
+        
+        if(A==0) gcd=B;
+        if(B==0) gcd=A;
+         
+        long max=Math.max(A,B);
+        long min=Math.min(A,B);
+        long temp=0;
+        while(max%min!=0)
+        {
+            temp=max%min;
+            max=min;
+            min=temp;
+        }
+        gcd=min;
+        long lcm=(A*B)/gcd;
+        Long ans[]={lcm,gcd};
+        
+        return ans;
+    }
+};

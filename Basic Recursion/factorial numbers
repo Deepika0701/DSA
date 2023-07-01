@@ -1,0 +1,18 @@
+https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/0?problemType=functional&difficulty%5B%5D=-1&page=1&query=problemTypefunctionaldifficulty%5B%5D-1page1
+class Solution{
+    static ArrayList<Long> factorialNumbers(long N){
+        // code here
+        ArrayList<Long> al =new ArrayList<>();
+        
+        long fact=1;
+        for(long i=1;i<=N;i++)
+        {
+            fact*=i;
+            if(fact<=N)
+            al.add(fact);
+            if(fact>=N)
+            break;
+        }
+        return al;
+    }
+}
