@@ -1,0 +1,33 @@
+
+https://practice.geeksforgeeks.org/problems/next-happy-number4538/1
+//User function Template for Java
+
+class Solution{
+
+    static int nextHappy(int N){
+        // code here
+        while(true)
+        {
+            if(isHappy(++N))
+            return N;
+        }
+    }
+    static boolean isHappy(int n)
+    {
+        if(n>9)
+        {
+            int sq_sum=0;
+            while(n>0)
+            {
+                sq_sum+=(n%10)*(n%10);
+                n/=10;
+            }
+            return isHappy(sq_sum);
+        }
+        
+        if(n==7||n==1)
+        return true;
+        else
+        return false;
+    }
+}
