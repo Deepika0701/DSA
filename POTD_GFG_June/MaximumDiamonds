@@ -1,0 +1,26 @@
+https://practice.geeksforgeeks.org/problems/chinky-and-diamonds3340/1
+
+
+
+//User function Template for Java
+
+class Solution {
+    static long maxDiamonds(int[] A, int N, int K) {
+        // code here
+        PriorityQueue<Integer> pq=new PriorityQueue<>(N,(a,b)->b-a);
+        
+        for(int i:A)
+        pq.add(i);
+        
+        long maxDiamonds=0;
+        int i=0;
+        while(K-->0)
+        {
+            int max=pq.poll();
+            maxDiamonds+=max;
+            max=max/2;
+            pq.add(max);
+        }
+        return maxDiamonds;
+    }
+};
