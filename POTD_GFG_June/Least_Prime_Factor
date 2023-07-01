@@ -1,0 +1,29 @@
+https://practice.geeksforgeeks.org/problems/least-prime-factor5216/1
+
+
+
+//User function Template for Java
+class Solution
+{
+    int primeFactor(int n)
+    {
+        for(int i=2;i*i<=n;i++)
+        {
+            if(n%i==0)
+            return i;
+        }
+        return n;
+    }
+    public int[] leastPrimeFactor(int n)
+    {
+        // code here
+        int[] arr=new int[n+1];
+        arr[0]=0;
+        int k=1;
+        for(int i=1;i<=n;i++)
+        {
+            arr[i]=primeFactor(i);
+        }
+        return arr;
+    }
+}
